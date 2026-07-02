@@ -1,4 +1,4 @@
-import { Hero, OurWork } from "@/src/components";
+import { Hero, NiceShavedIceSection, OurWork } from "@/src/components";
 import Image from "next/image";
 
 export default function Home() {
@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <Hero />
       <OurWork />
+      <NiceShavedIceSection />
     </>
   );
 }
