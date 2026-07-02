@@ -1,4 +1,5 @@
 import { Bebas_Neue, Courier_Prime } from "next/font/google";
+import Image from "next/image";
 
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const courier = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
@@ -36,11 +37,13 @@ export default function HeroSection() {
           <div className="w-full max-w-[600px] aspect-[3/4] bg-[#fcfcfc] flex items-center justify-center relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-transform duration-700 hover:scale-[1.02]">
             <div className="absolute inset-6 border-[0.5px] border-[#111111]/20 flex flex-col items-center justify-center bg-white/50 backdrop-blur-md">
               <span className="block mb-4 text-3xl text-[#111111]/40">✦</span>
-              <span
-                className={`${courier.className} text-[#111111] tracking-[0.3em] text-xs uppercase text-center leading-loose`}
-              >
-                Exhibition Space <br /> image_5ea4f9.jpg
-              </span>
+              <Image
+                src="/hero.jpg"
+                alt="Artist painting on canvas"
+                fill
+                loading="eager"
+                className="object-cover object-center z-0"
+              />
             </div>
           </div>
         </div>

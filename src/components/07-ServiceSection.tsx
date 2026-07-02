@@ -21,7 +21,7 @@ export default function ServicesSection() {
             EXPERTISE
           </h2>
           <p
-            className={`${playfair.className} text-[#555555] text-xl leading-relaxed max-w-xl`}
+            className={`${playfair.className} text-[#555555] text-xl text-center my-4 leading-relaxed max-w-xl`}
           >
             With bilingual (French & English) services tailored to your specific
             needs our goal is to best represent your work, product or business

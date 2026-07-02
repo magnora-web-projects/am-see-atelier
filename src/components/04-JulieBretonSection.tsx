@@ -1,4 +1,5 @@
 import { Bebas_Neue, Courier_Prime, Playfair_Display } from "next/font/google";
+import Image from "next/image";
 
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const courier = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
@@ -15,18 +16,17 @@ export default function JulieBretonSection() {
         <div className="w-full md:w-1/2 flex justify-center">
           <div className="w-full max-w-[500px] aspect-square bg-[#fafafa] relative overflow-hidden group">
             <div className="absolute inset-0 border border-[#e5e5e5] transition-all duration-500 group-hover:inset-4 group-hover:border-[#111111]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10">
+            <div className="absolute inset-6 border-[0.5px] border-[#111111]/20 flex flex-col items-center justify-center bg-white/50 backdrop-blur-md">
               <span className="text-2xl mb-4 text-[#111111]/30 group-hover:scale-110 transition-transform duration-500">
                 ✧
               </span>
-              <span
-                className={`${courier.className} text-[#555555] text-xs tracking-[0.2em] uppercase`}
-              >
-                Selected Work <br />
-                <span className="text-[#111111] mt-3 block">
-                  image_5f209b.jpg
-                </span>
-              </span>
+              <Image
+                src="/hero.jpg"
+                alt="Artist painting on canvas"
+                fill
+                loading="eager"
+                className="object-cover object-center z-0"
+              />
             </div>
           </div>
         </div>

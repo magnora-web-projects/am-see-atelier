@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Bebas_Neue, Courier_Prime } from "next/font/google";
+import { links } from "@/src/domain";
 
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const courier = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
@@ -29,13 +30,6 @@ export default function Header() {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
-
-  const links = [
-    { name: "Home", href: "#home" },
-    { name: "Our Archives", href: "#archives" },
-    { name: "Expertise", href: "#expertise" },
-    { name: "Social Archive", href: "#social" },
-  ];
 
   return (
     <>
