@@ -1,65 +1,74 @@
+"use client";
 import { Bebas_Neue, Courier_Prime } from "next/font/google";
+import { links } from "../domain";
+import { useState } from "react";
 
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const courier = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
 
 export default function Footer() {
-  const footerLinks = ["HOME", "PORTFOLIO", "SERVICES", "WHO WE ARE", "EMAIL"];
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <footer className="bg-[#fcfaf5] py-20 md:py-28 w-full border-t border-[#ebe8e0]">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-16 gap-8">
+    <footer className="bg-[#ffffff] py-24 w-full border-t-[0.5px] border-[#e5e5e5]">
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-24 gap-12">
           <h2
-            className={`${bebas.className} text-[#3b525e] text-2xl md:text-3xl tracking-[0.15em]`}
+            className={`${bebas.className} text-[#111111] text-4xl tracking-[0.2em]`}
           >
-            STAY SOCIAL
+            SOCIAL ARCHIVE
           </h2>
 
           <p
-            className={`${courier.className} text-[#7a7a7a] text-[13px] md:max-w-md text-center md:text-left leading-[2.4]`}
+            className={`${courier.className} text-[#888888] text-xs tracking-widest uppercase md:max-w-md text-center md:text-right leading-loose`}
           >
-            We love art. Follow us on{" "}
+            Curation & Inspiration <br />
             <a
               href="#"
-              className="underline underline-offset-4 decoration-1 hover:text-[#3b525e] transition-colors"
+              className="text-[#111111] border-b border-[#111111] hover:text-[#a38a70] hover:border-[#a38a70] transition-colors pb-1 inline-block mt-2"
             >
-              instagram
-            </a>{" "}
-            for weekly features of artists, galleries & creative inspiration.
+              @ATELIER.DESIGN
+            </a>
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-32">
           {[1, 2, 3, 4].map((item) => (
             <div
               key={item}
-              className="w-full aspect-square bg-[#ebe8e0] relative overflow-hidden shadow-sm flex items-center justify-center border border-dashed border-[#c2bfae] group hover:border-[#3b525e] transition-colors cursor-pointer"
+              className="w-full aspect-square bg-[#fafafa] relative overflow-hidden group border-[0.5px] border-[#e5e5e5] hover:border-[#111111] transition-colors duration-500 cursor-pointer"
             >
-              <div className="flex flex-col items-center">
-                <span className="text-2xl mb-2 grayscale opacity-50 group-hover:opacity-100 transition-opacity">
-                  📷
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/0 group-hover:bg-white/90 backdrop-blur-[0px] group-hover:backdrop-blur-sm transition-all duration-500">
+                <span className="text-xl mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0 text-[#111111]">
+                  ✦
                 </span>
                 <span
-                  className={`${courier.className} text-[#7a7a7a] text-[10px] tracking-widest uppercase`}
+                  className={`${courier.className} text-[#111111] text-[10px] tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100`}
                 >
-                  Post {item}
+                  View Entry {item}
                 </span>
               </div>
             </div>
           ))}
         </div>
 
-        <nav className="flex flex-wrap justify-center gap-6 md:gap-10">
-          {footerLinks.map((link) => (
-            <a
-              key={link}
-              href="#"
-              className={`${bebas.className} text-[#3b525e] text-[15px] tracking-[0.15em] hover:text-[#ff6161] transition-colors`}
-            >
-              {link}
-            </a>
-          ))}
+        <nav className="flex flex-wrap justify-center md:justify-between items-center gap-8 border-t-[0.5px] border-[#e5e5e5] pt-12">
+          <span
+            className={`${courier.className} text-[#a38a70] text-xs tracking-widest`}
+          >
+            © 2026 ATELIER AM SEE
+          </span>
+          <div className="flex gap-8 md:gap-12 flex-wrap justify-center">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`${courier.className} text-[#555555] text-xs tracking-[0.2em] uppercase hover:text-[#a38a70] transition-colors duration-300`}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
         </nav>
       </div>
     </footer>

@@ -12,23 +12,24 @@ const playfair = Playfair_Display({
 
 export default function ServicesSection() {
   return (
-    <section className="bg-[#fcfaf5] py-24 md:py-32 w-full">
-      <div className="max-w-5xl mx-auto px-6 md:px-12">
-        <div className="flex flex-col items-center text-center mb-24">
+    <section className="bg-[#ffffff] py-32 w-full border-t-[0.5px] border-[#e5e5e5]">
+      <div className="max-w-6xl mx-auto px-8">
+        <div className="flex flex-col justify-center items-center mb-32 border-b-[0.5px] border-[#e5e5e5] pb-16">
           <h2
-            className={`${bebas.className} text-[#ff6161] text-xl tracking-[0.15em] mb-8`}
+            className={`${bebas.className} text-[#111111] text-4xl tracking-[0.2em] mb-8 md:mb-0`}
           >
-            OUR SERVICES
+            EXPERTISE
           </h2>
           <p
-            className={`${playfair.className} text-[#8b8577] text-[17px] md:text-[19px] leading-relaxed max-w-2xl`}
+            className={`${playfair.className} text-[#555555] text-xl leading-relaxed max-w-xl`}
           >
             With bilingual (French & English) services tailored to your specific
-            needs our goal is to best represent your work, product or business.
+            needs our goal is to best represent your work, product or business
+            through flawless execution.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16 mb-40">
           {servicesData.map((service) => (
             <ServiceCard
               key={service.id}
@@ -38,27 +39,26 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row items-center pt-16">
-          <div className="w-full md:w-[35%] mb-6 md:mb-0">
+        <div className="flex flex-col md:flex-row items-start p-12 bg-[#fafafa] border-[0.5px] border-[#e5e5e5]">
+          <div className="w-full md:w-1/3 mb-10 md:mb-0">
+            <span className="text-[#a38a70] mb-4 block">✦</span>
             <h3
-              className={`${bebas.className} text-[#ff6161] text-xl tracking-[0.15em]`}
+              className={`${bebas.className} text-[#111111] text-3xl tracking-[0.15em]`}
             >
-              WHO WE ARE
+              THE STUDIO
             </h3>
           </div>
 
-          <div className="w-full md:w-[65%]">
+          <div className="w-full md:w-2/3">
             <p
-              className={`${courier.className} text-[#7a7a7a] text-[13px] leading-[2.4]`}
+              className={`${courier.className} text-[#555555] text-sm leading-[2.4]`}
             >
-              We are a bilingual (French & English) boutique design firm with
-              more than 15 years experience with web, e-commerce, branding,
-              print and packaging design. Our offices are located in Nelson B.C.
-              Canada where our small team of expert web designer, graphic
-              designer and coder work hard to best serve your needs. We love art
-              and focus on helping artist, art galleries, designers, makers and
-              creative businesses achieve a compelling and effective online
-              presence.
+              We are a bilingual boutique design firm with more than 15 years
+              experience with web, e-commerce, branding, print and packaging
+              design. Our offices are located in Nelson B.C. Canada where our
+              small team of expert designers and coders work hard to best serve
+              your needs. We love art and focus on helping artists, galleries,
+              and creative businesses achieve a compelling online presence.
             </p>
           </div>
         </div>

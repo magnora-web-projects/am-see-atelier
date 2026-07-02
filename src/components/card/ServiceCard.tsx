@@ -14,14 +14,17 @@ export default function ServiceCard({
   description,
 }: Omit<ServiceData, "id">) {
   return (
-    <div className="flex flex-col mb-10 md:mb-14 pr-0 md:pr-8">
-      <h4
-        className={`${bebas.className} text-[#3b525e] text-[22px] tracking-[0.1em] mb-4`}
-      >
-        {title}
-      </h4>
+    <div className="flex flex-col group cursor-default">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-8 h-[1px] bg-[#e5e5e5] group-hover:w-16 group-hover:bg-[#a38a70] transition-all duration-500" />
+        <h4
+          className={`${bebas.className} text-[#111111] text-3xl tracking-[0.15em]`}
+        >
+          {title}
+        </h4>
+      </div>
       <p
-        className={`${courier.className} text-[#7a7a7a] text-[13px] leading-[2.4]`}
+        className={`${courier.className} text-[#888888] text-sm leading-[2.2] pl-12 group-hover:text-[#555555] transition-colors duration-500`}
       >
         {description}
       </p>

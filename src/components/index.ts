@@ -7,3 +7,4 @@ export { default as MauriceBreton } from "./06-MauriceBreton";
 export { default as Services } from "./07-ServiceSection";
 export { default as ContactUs } from "./08-ContactUs";
 export { default as Footer } from "./09-footer";
+export * from "./header";
