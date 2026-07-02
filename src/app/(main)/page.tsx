@@ -1,4 +1,11 @@
-import { Hero, NiceShavedIceSection, OurWork } from "@/src/components";
+import {
+  Hero,
+  JulieBretonSection,
+  KelpSushi,
+  MauriceBreton,
+  NiceShavedIceSection,
+  OurWork,
+} from "@/src/components";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,6 +14,9 @@ export default function Home() {
       <Hero />
       <OurWork />
       <NiceShavedIceSection />
+      <JulieBretonSection />
+      <KelpSushi />
+      <MauriceBreton />
     </>
   );
 }
