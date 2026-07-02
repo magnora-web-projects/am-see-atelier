@@ -1,10 +1,13 @@
 import {
+  ContactUs,
+  Footer,
   Hero,
   JulieBretonSection,
   KelpSushi,
   MauriceBreton,
   NiceShavedIceSection,
   OurWork,
+  Services,
 } from "@/src/components";
 import Image from "next/image";
 
@@ -17,6 +20,9 @@ export default function Home() {
       <JulieBretonSection />
       <KelpSushi />
       <MauriceBreton />
+      <Services />
+      <ContactUs />
+      <Footer />
     </>
   );
 }

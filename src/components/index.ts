@@ -4,3 +4,6 @@ export { default as NiceShavedIceSection } from "./03-NiceShavedIceSection";
 export { default as JulieBretonSection } from "./04-JulieBretonSection";
 export { default as KelpSushi } from "./05-KlepSushi";
 export { default as MauriceBreton } from "./06-MauriceBreton";
+export { default as Services } from "./07-ServiceSection";
+export { default as ContactUs } from "./08-ContactUs";
+export { default as Footer } from "./09-footer";
