@@ -41,14 +41,16 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
+          {/* Logo */}
           <a
             href="#home"
             onClick={() => setIsOpen(false)}
             className={`${bebas.className} text-[#111111] text-3xl md:text-4xl tracking-[0.15em] relative`}
           >
-            ATELIER AM SEE
+            ATELIER
           </a>
 
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-10">
             {links.map((link) => (
               <a
@@ -67,6 +69,7 @@ export default function Header() {
             </a>
           </nav>
 
+          {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden flex flex-col gap-[6px] relative p-2 cursor-pointer z-[60]"
@@ -91,6 +94,7 @@ export default function Header() {
         </div>
       </header>
 
+      {/* Mobile Menu Overlay - Moved OUTSIDE the header to prevent backdrop-filter bugs */}
       <div
         className={`fixed inset-0 bg-[#ffffff] z-[50] flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
           isOpen

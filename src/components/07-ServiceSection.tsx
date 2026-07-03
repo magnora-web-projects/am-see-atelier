@@ -12,7 +12,7 @@ const playfair = Playfair_Display({
 
 export default function ServicesSection() {
   return (
-    <section className="bg-[#ffffff] py-32 w-full border-t-[0.5px] border-[#e5e5e5]">
+    <section className=" py-32 w-full border-t-[0.5px] border-[#e5e5e5]">
       <div className="max-w-6xl mx-auto px-8">
         <div className="flex flex-col justify-center items-center mb-32 border-b-[0.5px] border-[#e5e5e5] pb-16">
           <h2

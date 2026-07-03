@@ -1,7 +1,8 @@
 "use client";
 import { Bebas_Neue, Courier_Prime } from "next/font/google";
-import { links } from "../domain";
+import { FooterPic, links } from "../domain";
 import { useState } from "react";
+import Image from "next/image";
 
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const courier = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
@@ -10,7 +11,7 @@ export default function Footer() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <footer className="bg-[#ffffff] py-24 w-full border-t-[0.5px] border-[#e5e5e5]">
+    <footer className="py-24 w-full border-t-[0.5px] border-[#e5e5e5]">
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-24 gap-12">
           <h2
@@ -33,20 +34,20 @@ export default function Footer() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-32">
-          {[1, 2, 3, 4].map((item) => (
+          {FooterPic.map((item): any => (
             <div
-              key={item}
+              key={item.id}
               className="w-full aspect-square bg-[#fafafa] relative overflow-hidden group border-[0.5px] border-[#e5e5e5] hover:border-[#111111] transition-colors duration-500 cursor-pointer"
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/0 group-hover:bg-white/90 backdrop-blur-[0px] group-hover:backdrop-blur-sm transition-all duration-500">
-                <span className="text-xl mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0 text-[#111111]">
-                  ✦
-                </span>
-                <span
-                  className={`${courier.className} text-[#111111] text-[10px] tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100`}
-                >
-                  View Entry {item}
-                </span>
+              <div className="absolute inset-6 border-[0.5px] border-[#111111]/20 flex flex-col items-center justify-center bg-white/50 backdrop-blur-md">
+                <Image
+                  src={item.pic}
+                  alt="Artist painting on canvas"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading="eager"
+                  className="object-cover object-center z-0"
+                />
               </div>
             </div>
           ))}

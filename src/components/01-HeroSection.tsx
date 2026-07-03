@@ -6,46 +6,77 @@ const courier = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-[#ffffff] flex items-center justify-center py-20 px-6 md:px-16 overflow-hidden relative selection:bg-[#111111] selection:text-white">
-      <div className="absolute top-0 left-0 w-full h-full border-[0.5px] border-[#e5e5e5] opacity-50 pointer-events-none" />
-      <div className="absolute top-1/4 -right-20 w-[60vw] h-[1px] bg-gradient-to-r from-transparent via-[#d1d1d1] to-transparent rotate-45" />
+    <section className="relative w-full min-h-screen mt-24">
+      <div className="md:hidden flex flex-col min-h-screen w-full relative">
+        <div className="relative w-full h-[55vh]">
+          <Image
+            src="/hero-1.jpg"
+            alt="Art exhibition"
+            fill
+            loading="eager"
+            className="object-cover object-center"
+          />
+        </div>
 
-      <div className="relative max-w-7xl w-full flex flex-col md:flex-row items-center justify-between z-10 gap-16">
-        <div className="w-full md:w-5/12 flex flex-col items-start z-20">
-          <h2
-            className={`${bebas.className} text-[#a38a70] text-xl md:text-2xl tracking-[0.4em] uppercase mb-6`}
-          >
-            Curated Aesthetics
-          </h2>
+        <div className="relative w-full h-[45vh]">
+          <div className="absolute -top-[3.5rem] sm:-top-[5rem] left-8 sm:left-12 flex flex-col leading-[0.85] z-10">
+            <h1
+              className={`${bebas.className} text-[#000] text-[5.5rem] sm:text-[8rem] drop-shadow-sm`}
+            >
+              WE
+            </h1>
+            <h1
+              className={`${bebas.className} text-[#000] text-[5.5rem] sm:text-[8rem]`}
+            >
+              LOVE
+            </h1>
+            <h1
+              className={`${bebas.className} text-[#000] text-[5.5rem] sm:text-[8rem]`}
+            >
+              ART
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden md:flex min-h-screen w-full relative items-center justify-center overflow-hidden">
+        {/* Full Screen Background Image */}
+        <Image
+          src="/hero-1.jpg"
+          alt="Art exhibition"
+          fill
+          loading="eager"
+          className="object-cover object-center z-0"
+        />
+
+        <div className="absolute inset-0 bg-black/30 z-10" />
+
+        <div className="relative z-20 text-center flex flex-col items-center">
           <h1
-            className={`${bebas.className} text-[#111111] text-7xl md:text-9xl leading-[0.85] mb-10`}
+            className={`${bebas.className} text-white text-7xl lg:text-9xl tracking-[0.1em] drop-shadow-lg mb-4`}
           >
-            ART <br />
-            ELEVATED
+            WE LOVE ART
           </h1>
-
           <p
-            className={`${courier.className} text-sm text-[#555555] leading-[2.2] max-w-sm tracking-wide`}
+            className={`${courier.className} text-white/90 text-lg lg:text-xl tracking-widest uppercase`}
           >
-            We transcend standard design. Our focus is empowering artists, elite
-            galleries, and creative visionaries to manifest their essence
-            through avant-garde digital experiences.
+            Curated Aesthetics & Elevated Design
           </p>
         </div>
 
-        <div className="w-full md:w-7/12 relative flex justify-end">
-          <div className="w-full max-w-[600px] aspect-[3/4] bg-[#fcfcfc] flex items-center justify-center relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-transform duration-700 hover:scale-[1.02]">
-            <div className="absolute inset-6 border-[0.5px] border-[#111111]/20 flex flex-col items-center justify-center bg-white/50 backdrop-blur-md">
-              <span className="block mb-4 text-3xl text-[#111111]/40">✦</span>
-              <Image
-                src="/hero.jpg"
-                alt="Artist painting on canvas"
-                fill
-                loading="eager"
-                className="object-cover object-center z-0"
-              />
-            </div>
-          </div>
+        <div className="absolute bottom-0 left-0 w-full z-20 leading-[0]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320"
+            preserveAspectRatio="none"
+            className="w-full h-[80px] lg:h-[120px]"
+          >
+            <path
+              fill="#fcfcf2"
+              fillOpacity="1"
+              d="M0,128L80,144C160,160,320,192,480,197.3C640,203,800,181,960,144C1120,107,1280,53,1360,27L1440,0L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            />
+          </svg>
         </div>
       </div>
     </section>

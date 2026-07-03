@@ -11,7 +11,7 @@ const playfair = Playfair_Display({
 
 export default function NiceShavedIceSection() {
   return (
-    <section className="bg-[#ffffff] py-24 md:py-32 w-full">
+    <section className="py-24 md:py-32 w-full">
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16 md:gap-24 px-8">
         <div className="w-full md:w-1/2 flex flex-col items-start md:pl-12 lg:pl-24">
           <h3

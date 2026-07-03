@@ -15,20 +15,20 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <main className="bg-[#ffffff] min-h-screen">
+      <main className="bg-[##fcfcf2] min-h-screen">
         <Header />
 
         <div id="home">
           <Hero />
         </div>
 
-        <div id="archives">
+        {/* <div id="archives">
           <OurWork />
           <NiceShavedIceSection />
           <JulieBretonSection />
           <KelpSushi />
           <MauriceBreton />
-        </div>
+        </div> */}
 
         <div id="expertise">
           <Services />

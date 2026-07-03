@@ -11,7 +11,7 @@ const playfair = Playfair_Display({
 
 export default function OurWorkSection() {
   return (
-    <section className="bg-[#ffffff] py-24 md:py-40 w-full border-t-[0.5px] border-[#e5e5e5]">
+    <section className="py-24 md:py-40 w-full border-t-[0.5px] border-[#e5e5e5]">
       <div className="flex flex-col items-center mb-20 md:mb-32">
         <h2
           className={`${bebas.className} text-[#111111] text-3xl md:text-5xl tracking-[0.2em] mb-6`}
