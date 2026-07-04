@@ -4,6 +4,7 @@ import {
   Header,
   Hero,
   OurWork,
+  Registration,
   Services,
 } from "@/src/components";
 
@@ -20,6 +21,8 @@ export default function Home() {
         <div id="GALERIE">
           <OurWork />
         </div>
+
+        <Registration />
 
         <div id="DAS ATELIER">
           <Services />
