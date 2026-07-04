@@ -3,14 +3,9 @@ import {
   Footer,
   Header,
   Hero,
-  JulieBretonSection,
-  KelpSushi,
-  MauriceBreton,
-  NiceShavedIceSection,
   OurWork,
   Services,
 } from "@/src/components";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -22,19 +17,15 @@ export default function Home() {
           <Hero />
         </div>
 
-        {/* <div id="archives">
+        <div id="GALERIE">
           <OurWork />
-          <NiceShavedIceSection />
-          <JulieBretonSection />
-          <KelpSushi />
-          <MauriceBreton />
-        </div> */}
+        </div>
 
-        <div id="expertise">
+        <div id="DAS ATELIER">
           <Services />
         </div>
 
-        <div id="contact">
+        <div id="KONTAKT">
           <ContactUs />
         </div>
 

@@ -13,6 +13,7 @@ export default function HeroSection() {
             src="/hero-1.jpg"
             alt="Art exhibition"
             fill
+            sizes="100%"
             loading="eager"
             className="object-cover object-center"
           />
@@ -23,24 +24,28 @@ export default function HeroSection() {
             <h1
               className={`${bebas.className} text-[#000] text-[5.5rem] sm:text-[8rem] drop-shadow-sm`}
             >
-              WE
+              ATELIER
             </h1>
             <h1
               className={`${bebas.className} text-[#000] text-[5.5rem] sm:text-[8rem]`}
             >
-              LOVE
+              AM
             </h1>
             <h1
               className={`${bebas.className} text-[#000] text-[5.5rem] sm:text-[8rem]`}
             >
-              ART
+              SEE
             </h1>
+            <p
+              className={`${courier.className} text-[#555555] text-lg lg:text-xl tracking-widest uppercase`}
+            >
+              Ein Ort, an dem Kunst atmet
+            </p>
           </div>
         </div>
       </div>
 
       <div className="hidden md:flex min-h-screen w-full relative items-center justify-center overflow-hidden">
-        {/* Full Screen Background Image */}
         <Image
           src="/hero-1.jpg"
           alt="Art exhibition"
@@ -55,12 +60,12 @@ export default function HeroSection() {
           <h1
             className={`${bebas.className} text-white text-7xl lg:text-9xl tracking-[0.1em] drop-shadow-lg mb-4`}
           >
-            WE LOVE ART
+            ATELIER AM SEE
           </h1>
           <p
             className={`${courier.className} text-white/90 text-lg lg:text-xl tracking-widest uppercase`}
           >
-            Curated Aesthetics & Elevated Design
+            Ein Ort, an dem Kunst atmet
           </p>
         </div>
 

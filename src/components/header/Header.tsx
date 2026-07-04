@@ -1,11 +1,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Bebas_Neue, Courier_Prime } from "next/font/google";
+import {
+  Bebas_Neue,
+  Courier_Prime,
+  Playfair_Display,
+  Great_Vibes,
+} from "next/font/google";
 import { links } from "@/src/domain";
 
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const courier = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
+const playfair = Playfair_Display({
+  weight: "400",
+  style: "normal",
+  subsets: ["latin"],
+});
+const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin"] });
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,52 +52,52 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
-          {/* Logo */}
           <a
             href="#home"
             onClick={() => setIsOpen(false)}
-            className={`${bebas.className} text-[#111111] text-3xl md:text-4xl tracking-[0.15em] relative`}
+            className="relative flex flex-col items-center justify-center z-50 mb-2 md:mb-0 group"
           >
-            ATELIER
+            <span
+              className={`${playfair.className} text-[#274749] text-4xl md:text-5xl tracking-wide leading-none`}
+            >
+              Atelier
+            </span>
+            <span
+              className={`${greatVibes.className} text-[#274749] text-[1.35rem] md:text-2xl absolute -bottom-3 md:-bottom-4 whitespace-nowrap opacity-90`}
+            >
+              am See
+            </span>
           </a>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-10">
             {links.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`${courier.className} text-[#555555] text-xs tracking-[0.2em] uppercase hover:text-[#a38a70] transition-colors duration-300`}
+                className={`${courier.className} text-[#555555] text-xs tracking-[0.2em] uppercase hover:text-[#274749] transition-colors duration-300`}
               >
                 {link.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              className={`${bebas.className} text-white bg-[#111111] px-6 py-2 text-lg tracking-[0.15em] hover:bg-[#a38a70] transition-colors duration-500`}
-            >
-              INITIATE DIALOGUE
-            </a>
           </nav>
 
-          {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden flex flex-col gap-[6px] relative p-2 cursor-pointer z-[60]"
             aria-label="Toggle Menu"
           >
             <span
-              className={`w-8 h-[1px] bg-[#111111] transition-all duration-500 ${
+              className={`w-8 h-[1px] bg-[#274749] transition-all duration-500 ${
                 isOpen ? "rotate-45 translate-y-[7px]" : ""
               }`}
             />
             <span
-              className={`w-8 h-[1px] bg-[#111111] transition-all duration-500 ${
+              className={`w-8 h-[1px] bg-[#274749] transition-all duration-500 ${
                 isOpen ? "opacity-0" : "opacity-100"
               }`}
             />
             <span
-              className={`w-8 h-[1px] bg-[#111111] transition-all duration-500 ${
+              className={`w-8 h-[1px] bg-[#274749] transition-all duration-500 ${
                 isOpen ? "-rotate-45 -translate-y-[7px]" : ""
               }`}
             />
@@ -94,7 +105,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay - Moved OUTSIDE the header to prevent backdrop-filter bugs */}
       <div
         className={`fixed inset-0 bg-[#ffffff] z-[50] flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
           isOpen
@@ -109,7 +119,7 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`${bebas.className} text-[#111111] text-3xl sm:text-4xl tracking-[0.2em] uppercase hover:text-[#a38a70] transition-colors duration-300`}
+                className={`${bebas.className} text-[#274749] text-3xl sm:text-4xl tracking-[0.2em] uppercase hover:text-[#a38a70] transition-colors duration-300`}
               >
                 {link.name}
               </a>

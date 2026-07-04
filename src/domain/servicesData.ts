@@ -6,39 +6,39 @@ export interface ServiceData {
 
 export const servicesData: ServiceData[] = [
   {
-    id: "web-design",
-    title: "WEB DESIGN",
+    id: "galerie-ausstellung",
+    title: "GALERIE & AUSSTELLUNG",
     description:
-      "We design websites according to your specifications to best display your work to the world. All of our sites are mobile friendly and include search engine optimization (SEO). We are specialists when it comes to the Squarespace platform, your site will be user friendly and easy to update should you wish to do so.",
+      "Die Galerie zeigt eine kuratierte Auswahl an Arbeiten unserer Künstlerinnen und Künstler. Die Werke spiegeln unterschiedliche künstlerische Handschriften wider – von feinen Naturstudien über abstrakte Arbeiten bis hin zu farbintensiven Kompositionen.",
   },
   {
-    id: "e-commerce",
-    title: "E-COMMERCE",
+    id: "kunstverkauf",
+    title: "KUNST ERWERBEN",
     description:
-      "Finding the right platform for your e-commerce needs is an important part of online sales success. Depending on the scale of your operation, we will make platform suggestions to best serve you and your clients. We work with Shopify, Squarespace and Bigcommerce to help you develop e-commerce capabilities that will generate a growing income.",
+      "Alle ausgestellten Arbeiten können vor Ort im Detail angesehen und erworben werden. Unsere Galerie wird regelmäßig aktualisiert, sodass es für Sie bei jedem Besuch immer wieder neue, inspirierende Werke zu entdecken gibt.",
   },
   {
-    id: "branding",
-    title: "BRANDING",
+    id: "offenes-atelier",
+    title: "OFFENES ATELIER",
     description:
-      "Brand identity is one of our specialties. Through a specific creative process we will design an aesthetic identity that best describes who you are and what you stand for. The resulting logo, icon, fonts, patterns & color palette will form a cohesive and easily recognizable branding system.",
+      "Das Atelier ist ein lebendiger Ort des Austauschs. Die offene Atmosphäre lädt Besucherinnen und Besucher ein, die Entstehung der Werke aus nächster Nähe zu erleben, den Künstlern zuzuschauen, Fragen zu stellen und Inspiration zu finden.",
   },
   {
-    id: "print-digital",
-    title: "PRINT & DIGITAL",
+    id: "kinder-malkurs",
+    title: "KINDER-MALKURS",
     description:
-      "Consistent print and digital material is key to maintain brand recognition. We design exhibition catalogs, labels, publications, invitations, posters, business cards, stationery, environmental graphics, email signatures, magazine ads and social media material.",
+      "Jeden Sommer öffnet das Atelier zusätzlich seine Türen für unsere jungen Talente. Im Kinder-Malkurs entdecken junge Künstlerinnen und Künstler die Grundlagen der Malerei spielerisch und gestalten voller Stolz ihr eigenes Abschlussbild.",
   },
   {
-    id: "email-marketing",
-    title: "EMAIL MARKETING",
+    id: "expertise",
+    title: "ERFAHRUNG & EXPERTISE",
     description:
-      "We develop easy to use email marketing campaigns to simplify your marketing efforts and achieve your goals effortlessly. These can be used for monthly exhibitions, presale announcements, feature a specific subject, project, artwork, product or collection.",
+      "Mit über 30 Jahren Erfahrung in Kunst und Malerei bringen unsere Kunstschaffenden eine Tiefe, Ruhe und Professionalität mit, die man in jedem Pinselstrich spürt. Wir schaffen einen modernen Raum, in dem Kunst entsteht und im Austausch weiterwächst.",
   },
   {
-    id: "training",
-    title: "TRAINING",
+    id: "beratung",
+    title: "INDIVIDUELLE BERATUNG",
     description:
-      "Want more control and freedom over your web presence? We can teach you and your staff what you need to know from how to update your website, manage your e-store, write blog posts, stay on top of SEO or learn to use your brand effectively.",
+      "Ob für Kursanmeldungen, Terminabsprachen, Fragen zu bestimmten Werken oder individuelle Kunstanfragen – wir beraten Sie gerne persönlich. Wir freuen uns über Ihre Anfrage und stehen Ihnen jederzeit zur Verfügung.",
   },
 ];

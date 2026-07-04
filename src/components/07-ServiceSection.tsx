@@ -18,14 +18,14 @@ export default function ServicesSection() {
           <h2
             className={`${bebas.className} text-[#111111] text-4xl tracking-[0.2em] mb-8 md:mb-0`}
           >
-            EXPERTISE
+            DAS ATELIER
           </h2>
           <p
             className={`${playfair.className} text-[#555555] text-xl text-center my-4 leading-relaxed max-w-xl`}
           >
-            With bilingual (French & English) services tailored to your specific
-            needs our goal is to best represent your work, product or business
-            through flawless execution.
+            Zwischen Wasser, Licht und stillen Momenten liegt das Atelier am See
+            – ein kreativer Rückzugsort am Starnberger See, an dem seit über
+            sieben Jahren drei Künstlerinnen und Künstler arbeiten.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export default function ServicesSection() {
             <h3
               className={`${bebas.className} text-[#111111] text-3xl tracking-[0.15em]`}
             >
-              THE STUDIO
+              RÜCKZUGSORT
             </h3>
           </div>
 
@@ -53,12 +53,10 @@ export default function ServicesSection() {
             <p
               className={`${courier.className} text-[#555555] text-sm leading-[2.4]`}
             >
-              We are a bilingual boutique design firm with more than 15 years
-              experience with web, e-commerce, branding, print and packaging
-              design. Our offices are located in Nelson B.C. Canada where our
-              small team of expert designers and coders work hard to best serve
-              your needs. We love art and focus on helping artists, galleries,
-              and creative businesses achieve a compelling online presence.
+              Mit über 30 Jahren Erfahrung in Kunst und Malerei bringen sie eine
+              Tiefe, Ruhe und Professionalität mit, die man in jedem
+              Pinselstrich spürt. Hier entstehen Bilder, Gespräche,
+              Inspirationen – und ein Gefühl von Zuhause.
             </p>
           </div>
         </div>

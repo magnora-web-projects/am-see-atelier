@@ -17,18 +17,18 @@ export default function Footer() {
           <h2
             className={`${bebas.className} text-[#111111] text-4xl tracking-[0.2em]`}
           >
-            SOCIAL ARCHIVE
+            ATELIER AM SEE
           </h2>
 
           <p
             className={`${courier.className} text-[#888888] text-xs tracking-widest uppercase md:max-w-md text-center md:text-right leading-loose`}
           >
-            Curation & Inspiration <br />
+            Starnberger See <br />
             <a
-              href="#"
+              href="mailto:atelier-am-see@kontakt.de"
               className="text-[#111111] border-b border-[#111111] hover:text-[#a38a70] hover:border-[#a38a70] transition-colors pb-1 inline-block mt-2"
             >
-              @ATELIER.DESIGN
+              atelier-am-see@kontakt.de
             </a>
           </p>
         </div>
