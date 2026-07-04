@@ -113,18 +113,16 @@ export default function Header() {
         }`}
       >
         <nav className="flex flex-col items-center gap-10 text-center px-6">
-          {[...links, { name: "Initiate Dialogue", href: "#contact" }].map(
-            (link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`${bebas.className} text-[#274749] text-3xl sm:text-4xl tracking-[0.2em] uppercase hover:text-[#a38a70] transition-colors duration-300`}
-              >
-                {link.name}
-              </a>
-            ),
-          )}
+          {[...links].map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className={`${bebas.className} text-[#274749] text-3xl sm:text-4xl tracking-[0.2em] uppercase hover:text-[#a38a70] transition-colors duration-300`}
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
       </div>
     </>
