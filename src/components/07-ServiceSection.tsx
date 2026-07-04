@@ -38,28 +38,6 @@ export default function ServicesSection() {
             />
           ))}
         </div>
-
-        <div className="flex flex-col md:flex-row items-start p-12 bg-[#fafafa] border-[0.5px] border-[#e5e5e5]">
-          <div className="w-full md:w-1/3 mb-10 md:mb-0">
-            <span className="text-[#a38a70] mb-4 block">✦</span>
-            <h3
-              className={`${bebas.className} text-[#111111] text-3xl tracking-[0.15em]`}
-            >
-              RÜCKZUGSORT
-            </h3>
-          </div>
-
-          <div className="w-full md:w-2/3">
-            <p
-              className={`${courier.className} text-[#555555] text-sm leading-[2.4]`}
-            >
-              Mit über 30 Jahren Erfahrung in Kunst und Malerei bringen sie eine
-              Tiefe, Ruhe und Professionalität mit, die man in jedem
-              Pinselstrich spürt. Hier entstehen Bilder, Gespräche,
-              Inspirationen – und ein Gefühl von Zuhause.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
