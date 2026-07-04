@@ -3,6 +3,7 @@ import { Bebas_Neue, Courier_Prime } from "next/font/google";
 import { FooterPic, links } from "../domain";
 import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const courier = Courier_Prime({ weight: ["400", "700"], subsets: ["latin"] });
@@ -13,7 +14,13 @@ export default function Footer() {
   return (
     <footer className="py-24 w-full border-t-[0.5px] border-[#e5e5e5]">
       <div className="max-w-7xl mx-auto px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-24 gap-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row justify-between items-center md:items-end mb-24 gap-12"
+        >
           <h2
             className={`${bebas.className} text-[#111111] text-4xl tracking-[0.2em]`}
           >
@@ -31,12 +38,16 @@ export default function Footer() {
               atelier-am-see@kontakt.de
             </a>
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-32">
-          {FooterPic.map((item): any => (
-            <div
+          {FooterPic.map((item, index): any => (
+            <motion.div
               key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="w-full aspect-square bg-[#fafafa] relative overflow-hidden group border-[0.5px] border-[#e5e5e5] hover:border-[#111111] transition-colors duration-500 cursor-pointer"
             >
               <div className="absolute inset-6 border-[0.5px] border-[#111111]/20 flex flex-col items-center justify-center bg-white/50 backdrop-blur-md">
@@ -49,11 +60,17 @@ export default function Footer() {
                   className="object-cover object-center z-0"
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <nav className="flex flex-wrap justify-center md:justify-between items-center gap-8 border-t-[0.5px] border-[#e5e5e5] pt-12">
+        <motion.nav
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="flex flex-wrap justify-center md:justify-between items-center gap-8 border-t-[0.5px] border-[#e5e5e5] pt-12"
+        >
           <span
             className={`${courier.className} text-[#a38a70] text-xs tracking-widest`}
           >
@@ -70,7 +87,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
-        </nav>
+        </motion.nav>
       </div>
     </footer>
   );
