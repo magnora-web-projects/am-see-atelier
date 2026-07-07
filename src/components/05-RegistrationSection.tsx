@@ -22,6 +22,13 @@ export default function RegistrationSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const subject = encodeURIComponent("Anmeldung zum Sommer Kinder-Malkurs");
+    const body = encodeURIComponent(
+      `Anmeldung Details:\n\nName des Kindes: ${formData.childName}\nAlter: ${formData.age}\nName der Eltern: ${formData.parentName}\nE-Mail Adresse: ${formData.email}\n\nWir freuen uns auf Ihre Rückmeldung!`,
+    );
+
+    window.location.href = `mailto:atelier-am-see@kontakt.de?subject=${subject}&body=${body}`;
   };
 
   return (
