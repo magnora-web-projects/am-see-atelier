@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import { client } from "@/src/sanity/lib/client";
 
 export async function getArchivesData() {
   try {
@@ -22,11 +23,6 @@ export async function getArchivesData() {
 }
 
 export async function getServicesData() {
-  try {
-    const { rows } = await sql`SELECT * FROM services;`;
-    return rows;
-  } catch (error) {
-    console.error("Failed to fetch services:", error);
-    return [];
-  }
+  const query = `*[_type == "service"]`;
+  return await client.fetch(query);
 }
