@@ -1,8 +1,7 @@
 "use client";
-import { Bebas_Neue, Courier_Prime, Playfair_Display } from "next/font/google";
-import { archiveData } from "../domain/";
-import { ArchiveBlock } from "./card";
+import { Bebas_Neue, Playfair_Display } from "next/font/google";
 import { motion } from "framer-motion";
+import ArchiveBlock from "./card/ArchiveBlock";
 
 const bebas = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 const playfair = Playfair_Display({
@@ -11,7 +10,7 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
-export default function OurArchivesSection() {
+export default function OurArchivesClient({ data }: { data: any[] }) {
   return (
     <section className="py-24 md:py-32 w-full border-t-[0.5px] border-[#e5e5e5]">
       <motion.div
@@ -34,7 +33,7 @@ export default function OurArchivesSection() {
       </motion.div>
 
       <div className="flex flex-col gap-y-32 md:gap-y-48">
-        {archiveData.map((item, index) => (
+        {data.map((item, index) => (
           <ArchiveBlock key={item.id} item={item} index={index} />
         ))}
       </div>
