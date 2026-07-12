@@ -1,35 +1,28 @@
-import { sql } from "@vercel/postgres";
+import { client } from "@/src/sanity/lib/client";
+import imageUrlBuilder from "@sanity/image-url";
 
-export async function getCourseData(courseId: string) {
-  try {
-    const infoResult =
-      await sql`SELECT * FROM course_info WHERE id = ${courseId};`;
-    const info = infoResult.rows[0];
+const builder = imageUrlBuilder(client);
+function urlFor(source: any) {
+  return builder.image(source);
+}
 
-    if (!info) return null;
+export async function getCourseData(courseId?: string) {
+  const query = `*[_type == "course"][0]`;
 
-    const featuresResult =
-      await sql`SELECT category, content FROM course_features WHERE course_id = ${courseId} ORDER BY sort_order ASC;`;
+  const data = await client.fetch(query, {}, { cache: "no-store" });
 
-    const terminsResult =
-      await sql`SELECT step_number, title, description FROM course_termins WHERE course_id = ${courseId} ORDER BY step_number ASC;`;
+  if (!data) return null;
 
-    const formFieldsResult =
-      await sql`SELECT name, label, type, is_required FROM form_fields WHERE course_id = ${courseId} ORDER BY sort_order ASC;`;
-
-    return {
-      ...info,
-      details: featuresResult.rows
-        .filter((f) => f.category === "details")
-        .map((f) => f.content),
-      organisation: featuresResult.rows
-        .filter((f) => f.category === "organisation")
-        .map((f) => f.content),
-      termins: terminsResult.rows,
-      formFields: formFieldsResult.rows,
-    };
-  } catch (error) {
-    console.error("Database Error:", error);
-    throw new Error("Failed to fetch course data.");
-  }
+  return {
+    title: data.title,
+    subtitle: data.subtitle,
+    description: data.description,
+    imageSrc: data.image ? urlFor(data.image).url() : "/kid.jpg",
+    contactEmail: data.contactEmail,
+    submitButtonText: data.submitButtonText,
+    details: data.details || [],
+    organisation: data.organisation || [],
+    termins: data.termins || [],
+    formFields: data.formFields || [],
+  };
 }

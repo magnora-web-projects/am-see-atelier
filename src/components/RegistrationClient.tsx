@@ -15,6 +15,8 @@ const playfair = Playfair_Display({
 export default function RegistrationClient({ data }: { data: any }) {
   const [formData, setFormData] = useState<Record<string, string>>({});
 
+  if (!data) return null;
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -23,7 +25,7 @@ export default function RegistrationClient({ data }: { data: any }) {
     e.preventDefault();
 
     let bodyText = "Anmeldung Details:\n\n";
-    data.formFields.forEach((field: any) => {
+    (data.formFields || []).forEach((field: any) => {
       bodyText += `${field.label}: ${formData[field.name] || ""}\n`;
     });
     bodyText += "\nWir freuen uns auf Ihre Rückmeldung!";
@@ -31,7 +33,7 @@ export default function RegistrationClient({ data }: { data: any }) {
     const subject = encodeURIComponent(`Anmeldung zum ${data.title}`);
     const body = encodeURIComponent(bodyText);
 
-    window.location.href = `mailto:${data.contact_email}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${data.contactEmail}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -46,7 +48,7 @@ export default function RegistrationClient({ data }: { data: any }) {
         >
           <div className="w-full max-w-md aspect-[4/5] relative overflow-hidden shadow-xl rounded-tl-[12rem] md:rounded-tl-[16rem] rounded-br-[12rem] md:rounded-br-[16rem]">
             <Image
-              src={data.image_src}
+              src={data.imageSrc || "/kid.jpg"}
               alt={data.title}
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -90,7 +92,7 @@ export default function RegistrationClient({ data }: { data: any }) {
               <ul
                 className={`${courier.className} text-[#555555] text-sm leading-loose space-y-2`}
               >
-                {data.details.map((detail: string, idx: number) => (
+                {(data.details || []).map((detail: string, idx: number) => (
                   <li key={idx}>• {detail}</li>
                 ))}
               </ul>
@@ -104,7 +106,7 @@ export default function RegistrationClient({ data }: { data: any }) {
               <ul
                 className={`${courier.className} text-[#555555] text-sm leading-loose space-y-2`}
               >
-                {data.organisation.map((org: string, idx: number) => (
+                {(data.organisation || []).map((org: string, idx: number) => (
                   <li key={idx}>• {org}</li>
                 ))}
               </ul>
@@ -117,9 +119,9 @@ export default function RegistrationClient({ data }: { data: any }) {
             KURSABLAUF
           </h4>
           <div className="flex flex-col gap-8 mb-16">
-            {data.termins.map((termin: any) => (
+            {(data.termins || []).map((termin: any) => (
               <div
-                key={termin.step_number}
+                key={termin.stepNumber}
                 className="border-l-[1px] border-[#a38a70] pl-6 relative"
               >
                 <div className="absolute w-3 h-3 bg-[#a38a70] rounded-full -left-[6.5px] top-1.5" />
@@ -148,12 +150,12 @@ export default function RegistrationClient({ data }: { data: any }) {
               className="flex flex-col gap-8 w-full"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {data.formFields.map((field: any) => (
+                {(data.formFields || []).map((field: any) => (
                   <div key={field.name} className="relative">
                     <input
                       type={field.type}
                       name={field.name}
-                      required={field.is_required}
+                      required={field.isRequired}
                       className={`${courier.className} w-full bg-transparent border-b border-[#cccccc] py-2 text-[#111111] focus:outline-none focus:border-[#a38a70] transition-colors peer placeholder-transparent`}
                       placeholder={field.label}
                       onChange={handleInputChange}
@@ -171,7 +173,7 @@ export default function RegistrationClient({ data }: { data: any }) {
                 type="submit"
                 className={`${bebas.className} mt-6 w-full px-10 py-5 bg-[#111111] text-white text-xl tracking-[0.15em] uppercase hover:bg-[#a38a70] transition-colors duration-500`}
               >
-                {data.submit_button_text}
+                {data.submitButtonText}
               </button>
             </form>
           </div>

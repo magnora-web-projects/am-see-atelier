@@ -39,7 +39,7 @@ export default function ServicesClient({ data }: { data: any[] }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16 mb-40">
           {data.map((service, index) => (
             <ServiceCard
-              key={service.id}
+              key={service._id || index}
               title={service.title}
               description={service.description}
               index={index}
