@@ -32,10 +32,10 @@ export default function Footer() {
           >
             Starnberger See <br />
             <a
-              href="mailto:atelier-am-see@kontakt.de"
+              href="mailto:kontakt@atelier-starnberg.de"
               className="text-[#111111] border-b border-[#111111] hover:text-[#a38a70] hover:border-[#a38a70] transition-colors pb-1 inline-block mt-2"
             >
-              atelier-am-see@kontakt.de
+              kontakt@atelier-starnberg.de
             </a>
           </p>
         </motion.div>
@@ -74,7 +74,7 @@ export default function Footer() {
           <span
             className={`${courier.className} text-[#a38a70] text-xs tracking-widest`}
           >
-            © 2026 ATELIER AM SEE
+            © 2026 ATELIER STARNBERG
           </span>
           <div className="flex gap-8 md:gap-12 flex-wrap justify-center">
             {links.map((link) => (
