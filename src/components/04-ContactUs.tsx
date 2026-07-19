@@ -49,7 +49,7 @@ export default function ContactUs() {
           <span
             className={`${courier.className} text-white/80 text-xs tracking-widest uppercase`}
           >
-            atelier-am-see@kontakt.de
+            kontakt@atelier-starnberg.de
           </span>
         </div>
       </div>
