@@ -34,7 +34,7 @@ export default function ContactUs() {
         </p>
 
         <a
-          href="mailto:atelier-am-see@kontakt.de"
+          href="mailto:kontakt@atelier-starnberg.de"
           className={`${bebas.className} text-xl md:text-2xl text-white border border-white/50 px-12 py-5 tracking-[0.2em] transition-all duration-500 hover:bg-white hover:text-[#111111] uppercase backdrop-blur-sm mb-8 block`}
         >
           E-Mail Senden
